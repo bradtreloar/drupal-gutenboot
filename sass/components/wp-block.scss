@@ -1,4 +1,5 @@
 @import 'global';
+@import 'bootstrap/scss/grid';
 
 // Top-level blocks are treated as containers.
 .article .content > div[property="schema:text"] {
@@ -7,9 +8,8 @@
     @include make-container-max-widths();
   }
 
-  // Bootstrap's make-row mixin can't be used here as we need Columns block
-  // to act as row with a max width. Bootstrap expects us to wrap the row
-  // in a container, but Gutenberg doesn't provide a wrapper we can target.
+  // Remove the side padding because the columns block's children provide
+  // their own.
   > .wp-block-columns {
     padding-left: 0;
     padding-right: 0;
@@ -17,17 +17,20 @@
 }
 
 .wp-block-columns {
-  @include make-row;
+  @extend .row;
 }
 
 .wp-block-column {
-  @include make-col-ready;
-  margin: 0 !important;
+  @extend .col-md;
 }
 
+// Image should be constrained by container's width and should maintain
+// it's aspect ratio.
 .wp-block-image {
   img {
+    display: block;
     height: auto;
+    max-width: 100%;
   }
 }
 
