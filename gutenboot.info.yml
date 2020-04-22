@@ -8,7 +8,6 @@ base theme: stable
 libraries:
   - gutenboot/bootstrap
   - gutenboot/article
-  # - gutenboot/gutenberg.blocks_view
 
 libraries-override:
   gutenberg/blocks-view: gutenboot/gutenberg.blocks_view
