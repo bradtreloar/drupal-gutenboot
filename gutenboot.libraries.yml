@@ -1,0 +1,20 @@
+
+bootstrap:
+  js:
+    js/bootstrap.min.js: { minified: true }
+    js/popper.min.js: { minified: true }
+  css:
+    base:
+      css/bootstrap.css: {}
+  dependencies:
+    - core/jquery
+
+gutenberg.blocks_view:
+  css:
+    component:
+      css/components/wp-block.css: {}
+
+article:
+  css:
+    component:
+      css/components/article.css: {}

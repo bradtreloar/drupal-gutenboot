@@ -1,0 +1,24 @@
+name: GutenBoot
+type: theme
+description: A Bootstrap theme with Gutenberg support.
+core: 8.x
+
+base theme: stable
+
+libraries:
+  - gutenboot/bootstrap
+  - gutenboot/article
+  - gutenboot/gutenberg.blocks_view
+
+# libraries-override:
+#   gutenberg/blocks-view: gutenboot/gutenberg.blocks_view
+
+regions:
+  branding: Branding
+  navbar: Navbar
+  content: Content
+  footer: Footer
+  boilerplate: Boilerplate
+
+features:
+  - favicon

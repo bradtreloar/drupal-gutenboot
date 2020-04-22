@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+  - gutenboot
+id: gutenboot_page_title
+theme: gutenboot
+region: content
+weight: -1
+provider:
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: Page title
+  provider: core
+  label_display: '0'
+visibility: {}

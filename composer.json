@@ -1,0 +1,17 @@
+{
+    "name": "bradtreloar/gutenboot",
+    "description": "A Bootstrap theme with Gutenberg support.",
+    "type": "drupal-theme",
+    "license": "GPL-2.0+",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.8",
+        "bradtreloar/bootstrap_base": ">=1.0",
+        "drupal/core": "~8"
+    }
+}

@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ * Theme file for basetheme base theme.
+ */
+
+/**
+ * Implements template_preprocess_html()
+ */
+function basetheme_preprocess_html(&$variables) {
+  global $base_url;
+  $theme_path = \Drupal::service('theme.manager')->getActiveTheme()->getPath();
+  $variables['favicon_dir'] = "$base_url/$theme_path/images/favicon";
+  $variables['theme_color'] = '#0a0a0a';
+}
+
+/**
+ * Implements template_preprocess_page()
+ */
+function basetheme_preprocess_page(&$variables) {
+  global $base_url;
+  $theme_path = \Drupal::service('theme.manager')->getActiveTheme()->getPath();
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['site_logo'] = "$base_url/$theme_path/logo.svg";
+  $variables['current_year'] = date('Y');
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ *
+ * Sets 4xx template suggestions.
+ */
+function basetheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get the route.
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_parts = explode('.', $route_name);
+
+  // Suggest template page--4xx.html.twig (e.g., page--404.html.twig) When
+  // route is system.4xx.
+  if (count($route_parts) == 2 && $route_parts[0] === 'system') {
+    $code = $route_parts[1];
+    if (is_numeric($code) && $code >= 400 and $code < 500) {
+      $suggestions[] = 'page__' . $route_parts[1];
+    }
+  }
+}
