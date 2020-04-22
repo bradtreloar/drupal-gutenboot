@@ -1,5 +1,4 @@
 @import 'global';
-@import 'bootstrap/scss/grid';
 
 // Top-level blocks are treated as containers.
 .article .content > div[property="schema:text"] {
@@ -16,12 +15,26 @@
   }
 }
 
+
 .wp-block-columns {
-  @extend .row;
+  @include make-row;
+
+  // Do not arrange into row until medium breakpoint.
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
 }
 
 .wp-block-column {
-  @extend .col-md;
+  // Do not arrange into columns until medium breakpoint.
+  @include media-breakpoint-up(md) {
+    @include make-col-ready;
+    /// Reproduce rules from .col-md
+    /// @see node_modules/bootstrap/scss/mixins/_grid-framework.scss
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
 }
 
 // Image should be constrained by container's width and should maintain
@@ -31,6 +44,10 @@
     display: block;
     height: auto;
     max-width: 100%;
+  }
+
+  figcaption {
+    margin-top: 15px;
   }
 }
 
