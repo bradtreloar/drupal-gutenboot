@@ -1,17 +1,13 @@
 name: GutenBoot
 type: theme
 description: A Bootstrap theme with Gutenberg support.
-core: 8.x
+core_version_requirement: ^8.8 || ^9.0
 
 base theme: stable
 
 libraries:
   - gutenboot/bootstrap
-  - gutenboot/article
-
-libraries-override:
-  gutenberg/blocks-view: gutenboot/gutenberg.blocks_view
-  gutenberg/blocks-library: {}
+  - gutenboot/gutenberg.blocks_view
 
 regions:
   branding: Branding
