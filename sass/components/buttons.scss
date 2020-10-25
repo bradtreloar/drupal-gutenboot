@@ -1,0 +1,62 @@
+@import "global";
+
+// Add outline buttons with greater specificity for navbar.
+@each $color, $value in $theme-colors {
+  .navbar .navbar-nav .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+// Button with corner cut off.
+.btn-cornercut {
+  $corner-size: 7px;
+  position: relative;
+  padding-right: 1.25rem;
+
+  // Please a border-coloured triangle in the corner of the button, then
+  // mask it with a background-coloured one, revealing only a diagonal line.
+  &::before,
+  &::after {
+    border-color: transparent;
+    border-width: $corner-size;
+    border-style: solid;
+    content: ' ';
+    position: absolute;
+  }
+
+  &::before {
+    border-bottom-color: inherit;
+    border-right-color: inherit;
+    bottom: 0;
+    right: 0;
+  }
+
+  &::after {
+    border-width: ($corner-size + $btn-border-width * 0.2);
+    border-bottom-color: white;
+    border-right-color: white;
+    bottom: -$btn-border-width;
+    right: -$btn-border-width;
+  }
+
+  &.on-bg-body {
+    &::after {
+      border-bottom-color: $body-bg;
+      border-right-color: $body-bg;
+    }
+  }
+
+  &.on-bg-white {
+    &::after {
+      border-bottom-color: white;
+      border-right-color: white;
+    }
+  }
+
+  &.on-bg-primary {
+    &::after {
+      border-bottom-color: $primary;
+      border-right-color: $primary;
+    }
+  }
+}

@@ -59,6 +59,7 @@
   <head>
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
+    {% include '@gutenboot/includes/favicon.html.twig' %}
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
@@ -66,6 +67,7 @@
     <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>
+    {% include '@gutenboot/includes/sprites.html.twig' %}
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

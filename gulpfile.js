@@ -46,7 +46,7 @@ gulp.task("copy:js", () =>
       "./node_modules/bootstrap/dist/js/bootstrap.min.js",
       "./node_modules/popper.js/dist/umd/popper.min.js"
     ])
-    .pipe(gulp.dest("./js"))
+    .pipe(gulp.dest("./vendor"))
 );
 
 // Compile .scss files to .css when .scss files are updated.

@@ -80,5 +80,6 @@
     "ie >= 11",
     "Safari >= 8",
     "not bb < 10"
-  ]
+  ],
+  "dependencies": {}
 }

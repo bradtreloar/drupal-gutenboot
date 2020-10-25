@@ -68,3 +68,21 @@
     height: 100%;
   }
 }
+
+// Responsive padding on cover block.
+.wp-block-cover {
+  padding: $spacer !important;
+
+  @include media-breakpoint-up(sm) {
+    padding: $spacer * 1.5 !important;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $spacer * 3 !important;
+  }
+
+  // Override Wordpress default style.
+  .wp-block-cover__inner-container {
+    width: auto;
+  }
+}

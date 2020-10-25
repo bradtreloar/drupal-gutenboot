@@ -1,0 +1,7 @@
+#footer a {
+  color: #f8f9fa; }
+
+.footer-nav .nav-link {
+  font-size: 1.25rem; }
+  .footer-nav .nav-link span {
+    border-bottom: dotted 2px #f8f9fa; }

@@ -1,0 +1,18 @@
+@import 'global';
+
+#footer {
+  a {
+    color: $light;
+  }
+}
+
+// Links in the footer menu have large text and a dotted underline.
+.footer-nav {
+  .nav-link {
+    font-size: $font-size-lg;
+
+    span {
+      border-bottom: dotted 2px $light;
+    }
+  }
+}

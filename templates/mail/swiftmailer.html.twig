@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Override template file for Swiftmailer e-mails.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if is_html %}
+	<html>
+		<body>
+			<div style="background: #f0f0f0; padding: 1rem 0.5rem; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+				<div style="background: #ffffff; padding: 1rem 0.5rem; width: 100%; max-width: 720px; margin: 0 auto;">
+					<div style="text-align:center; padding: 0.5rem 0 0.3rem; background: #1f5289; margin-bottom: 1rem;">
+						<a style="display: inline-block;" href="{{ home_url }}">
+							<img style="display: block" src="{{ logo }}" alt="{{ site_name }}"/>
+						</a>
+					</div>
+					<div>
+						{{ body }}
+					</div>
+				</div>
+			</div>
+		</body>
+	</html>
+{% else %}
+{{ body }}
+{% endif %}

@@ -1,2 +1,7 @@
 @import 'variables';
 @import 'bootstrap/scss/bootstrap';
+
+// Fix for cards in IE11
+.card {
+  width: 100%;
+}
