@@ -239,6 +239,24 @@ function gutenboot_theme_suggestions_block_alter(&$suggestions, $variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function gutenboot_theme_suggestions_views_view_alter(&$suggestions, $variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  $suggestions[] = 'views_view__' . $view->id();
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_table_alter().
+ */
+function gutenboot_theme_suggestions_views_view_table_alter(&$suggestions, $variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  $suggestions[] = 'views_view_table__' . $view->id();
+}
+
+/**
  * Adds background CSS to variables.
  *
  * @param string $image_style_basename
