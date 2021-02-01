@@ -1,7 +1,7 @@
 name: GutenBoot
 type: theme
 description: A Bootstrap theme with Gutenberg support.
-core: 8.x
+core_version_requirement: 8.x | 9.x
 
 base theme: stable
 
